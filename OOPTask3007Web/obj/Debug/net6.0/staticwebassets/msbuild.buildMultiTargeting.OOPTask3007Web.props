@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\OOPTask3007Web.props" />
+</Project>

@@ -1,0 +1,130 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NewStudents</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="~/lib/jquery/dist/jquery.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#ddlType").change(function(){
+                var type=$("#ddlType").val()
+                if(type=="1"){
+                    $("#sch").show();
+                    $("#uni").hide();
+                }
+                else if(type=="2")
+                {
+                    $("#sch").hide();
+                    $("#uni").show();
+                }
+                else
+                {
+                    $("#sch").hide();
+                    $("#uni").hide();
+                }
+            })
+
+        })
+
+    </script>
+
+</head>
+<body>
+    <form action="SaveData" method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="txtName" placeholder="Name">
+    </div>
+    </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+    <div class="mb-3">
+        <label class="form-label">Phone</label>
+         <input type="text" class="form-control" name="txtPhone" placeholder="Phone">
+    </div>
+    </div>
+    </div>
+        <div class="row">
+            <div class="col-6">
+    <div class="mb-3">
+        <label class="form-label">Type</label>
+        <select name="ddlType" class="form-select" id="ddlType" >
+            <option selected>Type of Student</option>
+            <option value="1">School</option>
+            <option value="2">University</option>
+        </select>
+    </div>
+    </div>
+    </div>
+        <div class="row" id="sch" style="display:none">
+            <div class="col-6">
+    <div class="mb-3">
+                
+        <label class="form-label">Course1</label>
+        <input type="text" name="schcourse1" class="form-control" placeholder="Course 1">
+    </div>
+    </div>
+
+            <div class="col-6">
+    <div class="mb-3">
+        <label class="form-label">Course2</label>
+        <input type="text" name="schcourse2" class="form-control" placeholder="Course 2">
+    </div>
+    </div>
+    </div>
+        <div class="row" id="uni" style="display:none">
+            <div class="col-6">
+                <div class="mb-3">
+
+                    <label class="form-label">Course1</label>
+                        <input type="text" class="form-control" name="unicourse1" placeholder="Course 1">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="mb-3">
+
+                    <label class="form-label">Hour1</label>
+                        <input type="text" class="form-control" placeholder="Hour 1" name="unihour1">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label">Course2</label>
+                        <input type="text" class="form-control" placeholder="Course 2" name="unicourse2">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="mb-3">
+
+                    <label class="form-label">Hour2</label>
+                        <input type="text" class="form-control" placeholder="Hour 2" name="unihour2">
+                </div>
+            </div>
+    </div>
+        <div class="row">
+            <div class="col-6">
+    <div class="mb-3">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+    </div>
+    </div>
+    </div>
+    </form>
+</body>
+</html>
